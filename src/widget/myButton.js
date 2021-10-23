@@ -1,4 +1,6 @@
 import React from 'react'
+import { Button } from 'antd'
+import { UndoOutlined } from '@ant-design/icons';
 
 const MyButton = props => {
     // let baca = 0;
@@ -22,7 +24,7 @@ const MyButton = props => {
         State: {state} <br />
         State2: {state2} <br /> */}
         <p>{props.text}</p>
-        <button onClick={onClicked}>{props.title}</button>
+        <Button icon={<UndoOutlined />} type="primary" size="large" shape="round" onClick={onClicked}>{props.title}</Button>
         {state.loading && <div>Loading...</div>}
         {!state.loading && <div>Data Loaded: {state.data.length}</div>}
     </div>
