@@ -1,23 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
+import myFunction, {myFunction2, myFunction3} from './My';
+import MyButton from './widget/myButton';
 
 function App() {
+  const onClicked = () => {
+    myFunction();
+  }
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <MyButton title="Load data" text="ini adalah isi dari text props yang akan ditampilkan sebagai tag paragraph" />
     </div>
   );
 }
