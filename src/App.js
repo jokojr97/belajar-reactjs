@@ -6,7 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import './App.css';
-import myFunction, {myFunction2, myFunction3} from './My';
+import myFunction, { myFunction2, myFunction3 } from './My';
 import MyButton from './widget/myButton';
 import Home from './page/home';
 import Detail from './page/detail';

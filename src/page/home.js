@@ -11,10 +11,10 @@ const Home = props => {
     const auth = getAuth();
 
     return <div>
-        {            
+        {
             <div>
                 Home Page <br />
-                <div>                    
+                <div>
                     <Link to="/login">Login</Link> <br />
                     <Link to="/detail">Detail</Link>  <br />
                 </div>
