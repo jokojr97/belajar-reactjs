@@ -1,21 +1,28 @@
 import React from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { getAuth, signOut } from "@firebase/auth";
-import { Button } from "antd";
+import { Button, message } from "antd";
 
 const Detail = props => {
-    const onClicked = () => {
-        signOut(getAuth());
+    const history = useHistory();
+    const onClicked = async () => {
+        try {
+            signOut(getAuth());
+            history.push("/login");
+            message.success("Logut Berhasil");
+        } catch (e) {
+            message.success("Logut Berhasil");
+        }
     }
     const auth = getAuth();
     return <div> {
-        auth.currentUser === null ? <Redirect to="/login" /> :
-            <div>
-                Halaman Detail  <br />
-                <Link to="/login">Login</Link>  <br />
-                <Link to="/">Home</Link>  <br />
-                <Button onClicked={onClicked}>Logout</Button>
-            </div>
+        // auth.currentUser === null ? <Redirect to="/login" /> :
+        <div>
+            Halaman Detail  <br />
+            <Link to="/login">Login</Link>  <br />
+            <Link to="/">Home</Link>  <br />
+            <Button onClick={onClicked}>Logout</Button>
+        </div>
     }
     </div>
 }
